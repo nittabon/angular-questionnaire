@@ -53,7 +53,7 @@ export class QuestionComponent implements OnInit{
       console.log(res);
       if(res.isSuccess) {
         this.questions = res.data.questionInfo;
-        this.timer(1);//(res.data.timeLimitOfMinuteUnit);
+        this.timer(res.data.timeLimitOfMinuteUnit);
       }
       if(res.status == 401){
         this.route.navigateByUrl('/login');
