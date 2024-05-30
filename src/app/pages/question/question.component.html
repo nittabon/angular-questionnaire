@@ -1,0 +1,90 @@
+<div class="parent">
+  <div class="col-md-10" style="margin: auto; margin-bottom: auto;" >
+    <br>
+    <div class="card card-container">
+
+      <mat-horizontal-stepper linear #stepper>
+        <mat-step [stepControl]="FormGroup_1" >
+          <form [formGroup]="FormGroup_1">
+
+            <h1 class="example-h1 h1" >{{timerDisplay}}</h1>
+            <h3 class="example-h3">{{questions[0].title}}</h3>
+
+              <div *ngFor="let item of questions[0].questionAnswerInfo">
+                <input type="checkbox" required [value]="item.questionAnswerId" formControlName="annsweCtrl1" (change)="onChange(item.questionAnswerId, $any($event).target.checked)">  {{ item.answer }}
+              </div>
+
+            <div>
+              <button mat-button matStepperNext (click)="onSelected(questions[0].questionId,false)">Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="FormGroup_2" >
+          <form [formGroup]="FormGroup_2">
+
+            <h1 class="example-h1 h1" >{{timerDisplay}}</h1>
+            <h3 class="example-h3">{{questions[1].title}}</h3>
+
+              <div *ngFor="let item of questions[1].questionAnswerInfo">
+                <input type="checkbox" required [value]="item.questionAnswerId" formControlName="annsweCtrl2" (change)="onChange(item.questionAnswerId, $any($event).target.checked)">  {{ item.answer }}
+              </div>
+
+            <div>
+              <button mat-button matStepperNext (click)="onSelected(questions[1].questionId,false)">Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="FormGroup_3" >
+          <form [formGroup]="FormGroup_3">
+
+            <h1 class="example-h1 h1" >{{timerDisplay}}</h1>
+            <h3 class="example-h3">{{questions[2].title}}</h3>
+
+              <div *ngFor="let item of questions[2].questionAnswerInfo">
+                <input type="checkbox" required [value]="item.questionAnswerId" formControlName="annsweCtrl3" (change)="onChange(item.questionAnswerId, $any($event).target.checked)">  {{ item.answer }}
+              </div>
+
+            <div>
+              <button mat-button matStepperNext (click)="onSelected(questions[2].questionId,false)">Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="FormGroup_4" >
+          <form [formGroup]="FormGroup_4">
+
+            <h1 class="example-h1 h1" >{{timerDisplay}}</h1>
+            <h3 class="example-h3">{{questions[3].title}}</h3>
+
+              <div *ngFor="let item of questions[3].questionAnswerInfo">
+                <input type="checkbox" required [value]="item.questionAnswerId" formControlName="annsweCtrl4" (change)="onChange(item.questionAnswerId, $any($event).target.checked)">  {{ item.answer }}
+              </div>
+
+            <div>
+              <button mat-button matStepperNext (click)="onSelected(questions[3].questionId,false)">Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="FormGroup_5" >
+          <form [formGroup]="FormGroup_5">
+
+            <h1 class="example-h1 h1" >{{timerDisplay}}</h1>
+            <h3 class="example-h3">{{questions[4].title}}</h3>
+
+              <div *ngFor="let item of questions[4].questionAnswerInfo">
+                <input type="checkbox" required [value]="item.questionAnswerId" formControlName="annsweCtrl5" >  {{ item.answer }}
+              </div>
+
+            <div>
+              <button mat-button matStepperNext (click)="onSelected(questions[4].questionId,true)">Submit</button>
+            </div>
+          </form>
+        </mat-step>
+
+      </mat-horizontal-stepper>
+    </div>
+  </div>
+</div>

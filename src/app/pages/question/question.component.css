@@ -1,0 +1,40 @@
+/* .mat-stepper-horizontal {
+  margin-top: 8px;
+}
+*/
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+.h1{
+  text-align: center !important;
+}
+
+button{
+	width: 10%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #573b8a;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+button:hover{
+	background: #6d44b8;
+}
+.mat-step-header{
+
+}
+.mat-horizontal-stepper-header{
+  padding: 0 80px !important;
+}
+.mat-stepper-horizontal-line{
+  display: none !important;
+}

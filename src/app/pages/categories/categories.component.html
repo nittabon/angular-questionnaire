@@ -1,0 +1,22 @@
+<div class="parent">
+  <div class="col-md-10" style="margin: auto; margin-bottom: auto;" >
+    <br>
+    <div class="card card-container">
+      <div class="card-body">
+        <h5 class="card-title">Question List</h5>
+        <ul class="list-group list-group-light">
+          <ng-container *ngFor="let data of categories">
+            <li class="list-group-item px-3">
+              <a (click)="onClick(data.questionCategoryId)" class="card-link">{{data.title}}</a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+
+    </div>
+
+    </div>
+</div>
+
+
+

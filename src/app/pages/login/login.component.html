@@ -1,0 +1,13 @@
+<div class="parent">
+    <div class="main">
+
+            <div class="login">
+                <form>
+                    <label for="chk" aria-hidden="true">Login</label>
+                    <input type="text" name="Username" [(ngModel)]="loginObj.username" placeholder="Username" required="">
+                    <input type="password" name="Password" [(ngModel)]="loginObj.password" placeholder="Password" required="">
+                    <button (click)="onLogin()">Login</button>
+                </form>
+            </div>
+    </div>
+</div>
