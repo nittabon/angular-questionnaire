@@ -6,10 +6,10 @@
       <mat-horizontal-stepper linear #stepper>
         <mat-step [stepControl]="FormGroup_1" >
           <form [formGroup]="FormGroup_1">
+            <ng-template matStepLabel>Question</ng-template>
 
             <h1 class="example-h1 h1" >{{timerDisplay}}</h1>
             <h3 class="example-h3">{{questions[0].title}}</h3>
-
               <div *ngFor="let item of questions[0].questionAnswerInfo">
                 <input type="checkbox" required [value]="item.questionAnswerId" formControlName="annsweCtrl1" (change)="onChange(item.questionAnswerId, $any($event).target.checked)">  {{ item.answer }}
               </div>
@@ -22,10 +22,10 @@
 
         <mat-step [stepControl]="FormGroup_2" >
           <form [formGroup]="FormGroup_2">
+            <ng-template matStepLabel>Question</ng-template>
 
             <h1 class="example-h1 h1" >{{timerDisplay}}</h1>
             <h3 class="example-h3">{{questions[1].title}}</h3>
-
               <div *ngFor="let item of questions[1].questionAnswerInfo">
                 <input type="checkbox" required [value]="item.questionAnswerId" formControlName="annsweCtrl2" (change)="onChange(item.questionAnswerId, $any($event).target.checked)">  {{ item.answer }}
               </div>
@@ -38,10 +38,10 @@
 
         <mat-step [stepControl]="FormGroup_3" >
           <form [formGroup]="FormGroup_3">
+            <ng-template matStepLabel>Question</ng-template>
 
             <h1 class="example-h1 h1" >{{timerDisplay}}</h1>
             <h3 class="example-h3">{{questions[2].title}}</h3>
-
               <div *ngFor="let item of questions[2].questionAnswerInfo">
                 <input type="checkbox" required [value]="item.questionAnswerId" formControlName="annsweCtrl3" (change)="onChange(item.questionAnswerId, $any($event).target.checked)">  {{ item.answer }}
               </div>
@@ -54,6 +54,7 @@
 
         <mat-step [stepControl]="FormGroup_4" >
           <form [formGroup]="FormGroup_4">
+            <ng-template matStepLabel>Question</ng-template>
 
             <h1 class="example-h1 h1" >{{timerDisplay}}</h1>
             <h3 class="example-h3">{{questions[3].title}}</h3>
@@ -70,6 +71,7 @@
 
         <mat-step [stepControl]="FormGroup_5" >
           <form [formGroup]="FormGroup_5">
+            <ng-template matStepLabel>Question</ng-template>
 
             <h1 class="example-h1 h1" >{{timerDisplay}}</h1>
             <h3 class="example-h3">{{questions[4].title}}</h3>
