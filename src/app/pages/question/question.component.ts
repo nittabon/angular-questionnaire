@@ -80,12 +80,7 @@ export class QuestionComponent implements OnInit{
       this.timerDisplay = `${prefix}${Math.floor(seconds / 60)}:${textSec}`;
 
       if (seconds == 0) {
-        this.dialog.open(ErrorDialogComponent, {
-          data: {
-            title: 'หมดเวลา',
-            message: '',
-          },
-        });
+        this.submitAnswers(true);
         clearInterval(timer);
       }
     }, 1000);
@@ -108,9 +103,16 @@ export class QuestionComponent implements OnInit{
       "questions": this.answers
     };
 
+    if(isTimeUp){
+      for (var item of this.questions) {
+        if(this.answers.find(x=>x.questionId !== item.questionId)){
+          this.answers.push({questionId:item.questionId,answers: []});
+        }
+      }
+    }
+
     this.http.post('https://training-homework.calllab.net/v1/questions/submit-assignment', body).subscribe({
       next: (res:any) => {
-        console.log(res.data.score);
         this.dialog.open(ErrorDialogComponent, {
           data: {
             title: 'ผลคะแนน',
