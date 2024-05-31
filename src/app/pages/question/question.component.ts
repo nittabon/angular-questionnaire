@@ -49,16 +49,21 @@ export class QuestionComponent implements OnInit{
   }
   loadQuestion(){
     this.id = this.router.snapshot.paramMap.get('id');
-    this.http.get('https://training-homework.calllab.net/v1/questions/categories/'+this.id).subscribe((res:any)=>{
-      console.log(res);
-      if(res.isSuccess) {
+
+    this.http.get('https://training-homework.calllab.net/v1/questions/categories/'+this.id).subscribe({
+      next: (res:any) => {
         this.questions = res.data.questionInfo;
         this.timer(res.data.timeLimitOfMinuteUnit);
+      },
+      error: err => {
+        this.dialog.open(ErrorDialogComponent, {
+          data: {
+            title: 'Error',
+            message: err ,
+          },
+        });
       }
-      if(res.status == 401){
-        this.route.navigateByUrl('/login');
-      }
-    })
+    });
   }
 
   timer(minute) {
